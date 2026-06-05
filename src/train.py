@@ -9,7 +9,9 @@ def main():
     X = data.data
     y = data.target
 
-    model = RandomForestClassifier()
+    model = model = RandomForestClassifier(
+    n_estimators=200
+    )
 
     model.fit(X, y)
 
