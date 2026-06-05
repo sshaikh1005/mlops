@@ -1,24 +1,34 @@
+# src/train.py
+
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
 
-def main():
+def train_model():
+
     data = load_iris()
 
     X = data.data
     y = data.target
 
-    model = model = RandomForestClassifier(
-    n_estimators=300
+    model = RandomForestClassifier(
+        n_estimators=200,
+        random_state=42
     )
 
     model.fit(X, y)
 
-    joblib.dump(model, "models/model.pkl")
-
-    print("Model saved")
+    return model
 
 
 if __name__ == "__main__":
-    main()
+
+    model = train_model()
+
+    joblib.dump(
+        model,
+        "models/model.pkl"
+    )
+
+    print("Model saved")
