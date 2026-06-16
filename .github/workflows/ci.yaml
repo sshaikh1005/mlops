@@ -32,7 +32,12 @@ jobs:
           --port 5000 > mlflow.log 2>&1 & 
 
       - name: Wait for MLflow
-        run: sleep 15
+        run: |
+          for i in {1..30}; do
+            curl -f http://127.0.0.1:5000 && exit 0
+            sleep 2
+          done
+          exit 1
       
       - name: Verify MLflow
         run: |
