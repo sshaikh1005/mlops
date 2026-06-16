@@ -57,7 +57,7 @@ jobs:
       
       - name: Build Docker Image
         run: |
-          docker build -t iris-api:v1 .
+          docker build -t iris-api:latest .
 
       - name: Run Container
         run: |
@@ -65,7 +65,7 @@ jobs:
           --name iris-api \
           -p 8000:8000 \
           -e MLFLOW_TRACKING_URI=http://host.docker.internal:5000 \
-          iris-api
+          iris-api:latest
 
       - name: Verify API
         run: |
