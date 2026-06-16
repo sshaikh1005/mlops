@@ -69,9 +69,15 @@ jobs:
 
       - name: Verify API
         run: |
-          run: |
-          for i in {1..30}; do
-            curl -f http://localhost:8000/health && exit 0
+          for i in {1..10}; do
+            if curl -f http://localhost:8000/health; then
+              echo "API is healthy"
+              exit 0
+            fi
+
+            echo "Waiting for API..."
             sleep 2
           done
+
+          echo "API never became healthy"
           exit 1
