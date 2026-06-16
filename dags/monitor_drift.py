@@ -20,7 +20,7 @@ with DAG(
     default_args=default_args,
     description="Batch process production telemetry and test for feature drift",
     schedule_interval=timedelta(days=1),
-    start_date=datetime(2026, 1, 1),
+    start_date=datetime(2026, 6, 1),
     catchup=False,
 ) as dag:
 

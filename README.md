@@ -50,7 +50,7 @@ This repository is focused on learning and implementing each stage of that lifec
 
 This project follows concepts from:
 
-* MLOps Zero to Hero by Abhishek Veeramalla
+* MLOps Zero to Hero by Shahid Shaikh
 * Practical MLOps implementations
 * Production-grade deployment practices
 * Real-world ML system design
